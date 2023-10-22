@@ -1,20 +1,28 @@
 package practice;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 public class BankAccount {
+    protected double amount;
 
-  public double getAmount() {
-    //TODO: реализуйте метод и удалите todo
-    // верните значение количества денег не счету
-    return 0;
-  }
+    public BankAccount() {
+        this.amount = 0.0;
+    }
 
-  public void put(double amountToPut) {
-    //TODO: реализуйте метод и удалите todo
-    // метод зачисляет деньги на счет
-  }
+    public double getAmount() {
+        return amount;
+    }
 
-  public void take(double amountToTake) {
-    //TODO: реализуйте метод и удалите todo
-    // метод списывает деньги со счета
-  }
+    public void put(double amountToPut) {
+        if (amountToPut > 0.0) {
+            amount += amountToPut;
+        }
+    }
+
+    public void take(double amountToTake) {
+        if (amount >= amountToTake && amountToTake > 0.0) {
+            amount -= amountToTake;
+        }
+    }
 }
